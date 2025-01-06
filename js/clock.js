@@ -1,15 +1,14 @@
+// Main purpose: Show a live clock on the screen that updates every second.
+
 const clock = document.querySelector("h2#clock");
+const day = document.querySelector("h2#day");
 
+// A function that gets the current time and displays it on the screen
 function getClock(){
-    //clock.innerHTML = new Date().toLocaleTimeString();
-    const date = new Date();
-    const hours = String(date.getHours()).padStart(2,"0");
-    const minutes = String(date.getMinutes()).padStart(2,"0");
-    const seconds = String(date.getSeconds()).padStart(2,"0");
-    clock.innerHTML = `${hours}:${minutes}:${seconds}`;
-
+    const today = new Date();
+    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    day.innerHTML = `${dayNames[today.getDay()]} ${today.getMonth()+1}/${today.getDate()} ${today.getFullYear()}`;
+    clock.innerHTML = today.toLocaleTimeString();
 }
 getClock();
-setInterval(getClock, 1000);
 
-//setTimeout(getClock, 1000);

@@ -1,3 +1,6 @@
+// Main purpose: Show a random famous quote on the screen.
+
+// An array of objects that contains famous quotes and their authors
 const quotes =[
     {
     quote: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
@@ -41,8 +44,11 @@ const quotes =[
 },
 ];
 
+// Assign html elements to variables
 const quote = document.querySelector("#quote span:first-child");
 const author = document.querySelector("#quote span:last-child");
+
+// Get a random quote from the quotes array
 const todayQuote = quotes[Math.floor(Math.random()*quotes.length)];
 
 quote.innerText = todayQuote.quote;
